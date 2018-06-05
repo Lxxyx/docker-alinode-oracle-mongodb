@@ -43,4 +43,4 @@ RUN adduser --disabled-password --gecos '' docker && adduser docker sudo && echo
 USER docker
 
 # Install node deps
-RUN sudo npm i cnpm pm2 oracledb -g
+RUN sudo npm i cnpm pm2 oracledb -g --unsafe-perm=true --allow-root
