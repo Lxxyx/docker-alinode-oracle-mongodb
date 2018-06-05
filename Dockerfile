@@ -35,5 +35,12 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 \
 
 RUN mongo --version
 
+RUN apt-get update && \
+      apt-get -y install sudo
+      
+RUN adduser --disabled-password --gecos '' docker && adduser docker sudo && echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
+USER docker
+
 # Install node deps
 RUN sudo npm i cnpm pm2 oracledb -g
