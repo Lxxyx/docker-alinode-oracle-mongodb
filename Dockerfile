@@ -35,4 +35,5 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 \
 
 RUN mongo --version
 
+# Install node deps
 RUN npm i cnpm pm2 oracledb -g
